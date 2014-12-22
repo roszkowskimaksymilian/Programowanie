@@ -1,0 +1,46 @@
+
+#include <iostream>
+#include <conio.h>
+#include <cstdlib>
+
+using namespace std;
+
+
+int main()
+{
+//Program będzie wykorzystywał trzy zmienne typu całkowitego:
+//masa_calosci - tutaj będzie zapamientana aktualna masa,
+//masa_aktualnego - tu zapamientamy masę aktualnie dodanego materialu,
+//masa_zadana - tu bedzie przechowywana ilość żądana przez użytkownika
+
+double masa_calosci, masa_aktualnego, masa_zadana;
+
+cout<< "Program petle_1 prezentujacy petle  do while\n\n;";
+
+//użytkownik wprowadza żądaną ilość której osiągnięcie zakończy działanie programu
+cout<<"Podaj zadana mase: ";
+cin>> masa_zadana;
+// teraz zerujemy zmienną, w której będziemy pamiętali sume całości
+masa_calosci = 0;
+// I zaczynamy pętle
+    do
+    {
+    // W każdym przebiegu pętli musimy odczytać masę dodawanego elementu
+    cout << "Podaj mase następnego elementu :";
+    cin >> masa_aktualnego;
+    //następnie dodajemy aktualne wczytaną masę do już zgromadzonego materiału
+    masa_calosci = masa_calosci + masa_aktualnego;
+    //można też zapisać skrótem masa_calosci += masa_aktualnego
+    cout<<"Masa zgromadzonego dotychczas: "<< masa_calosci<< endl;
+    //tutaj pętla się kończy, pozostaje sprawdzenie warunku wyjścia z pętli
+    }
+    while (masa_calosci < masa_zadana);
+    //petla skończyła się
+
+    cout << "Masa koncowa :" << masa_calosci << endl;
+    cout<<""<<endl;
+    cout << "\tWcisnij [ESC] zeby wyjsc" << endl;
+    while( getch() != 27 );
+
+return 0;
+}
