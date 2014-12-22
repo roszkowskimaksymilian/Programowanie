@@ -1,0 +1,56 @@
+// kalkulator oblicza 2 zmienne z użyciem if
+#include <iostream>
+#include <conio.h>
+#include <cstdlib>
+
+using namespace std;
+
+
+int main(void)
+{
+double x,y;
+double wynik;
+char dzialanie;
+bool status_ok;
+status_ok = true;
+cout<<"Podaj pierwszy argument x= ";
+cin>>x;
+cout<<"Podaj dzialanie(+-*/): ";
+cin>>dzialanie;
+cout<<"Podaj drugi argument y= ";
+cin>>y;
+cout<<endl;
+
+if (dzialanie =='+')
+    wynik=x+y;
+else if (dzialanie =='-')
+    wynik=x-y;
+else if (dzialanie =='*')
+    wynik=x*y;
+else if (dzialanie =='/')
+    {
+        if (y==0)
+        {
+        status_ok=false;
+        cout<<"Nieprawidlowy arument, y musi być rozny od 0\n";
+        }
+        else
+        {
+        wynik=x/y;
+        }
+    }
+    else
+    {
+        status_ok=false;
+        cout<<"nieprawidlowy symbol operacji"<<dzialanie<<endl;
+    }
+if (status_ok)
+    cout<<x<<""<<dzialanie<<""<<y<<"="<<wynik<<endl;
+else
+        cout<<"Program zakonczyl sie niepowodzeniem.\n";
+
+    cout << "\tWcisnij [ESC] zeby wyjsc" << endl;
+    while( getch() != 27 );
+
+return 0;
+}
