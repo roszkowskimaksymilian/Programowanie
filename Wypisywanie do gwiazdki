@@ -1,0 +1,21 @@
+#include <iostream>
+#include <cstdlib>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+char zn;
+
+cout << "Program petle_4 wczytujacy z klawiatury i drukujacy na ekranie znaki \n";
+cout << "az do napotkania znaku ''*'', ktory nie jest drukowany\n\n";
+
+cin >> zn;
+
+while (zn != '*')
+{
+    cout << zn;
+    cin >> zn;
+}
+return 0;
+}
