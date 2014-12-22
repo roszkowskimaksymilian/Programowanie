@@ -1,0 +1,61 @@
+
+#include <iostream>
+#include <conio.h>
+#include <cstdlib>
+
+using namespace std;
+double wzrost,waga,w;
+char odp;
+bool status_ok;
+string imie;
+string nazwisko;
+
+int main(void)
+{
+status_ok = true;
+cout << "Podaj imie" <<endl;
+cin >> imie;
+cout << "Podaj nazwisko" <<endl;
+cin >> nazwisko;
+cout << endl;
+cout << "\t\tWitaj " << imie <<" "<< nazwisko <<endl;
+cout << endl;
+cout << "Podaj wage w kg" <<endl;
+cin >> waga;
+cout << "Podaj wzrost w centymetrach (np. 180)" <<endl;
+cin >> wzrost;
+if (wzrost>210||wzrost<1)
+    {
+      status_ok = false;
+      cout <<("Bledny wzrost, zacznij jeszcze raz po nacisnienciu ESC")<<endl;
+      while (getch() !=27);
+      return 0;
+    }
+else if (status_ok = true)
+    {
+    cout << endl;
+    w = (waga /((wzrost*wzrost)/10000));
+    cout << "Twoje BMI wynosi: " <<endl;
+    cout << w << endl;
+    cout << endl;
+    if (w<18.5) cout << ("Niestety cierpisz na niedowage");
+    else if (w< 25) cout << ("Masz prawidlowa wage - Gratulacje");
+    else if (w>= 25)
+        {
+        cout << ("Niestety masz nadwage");
+        cout <<("")<< endl;
+        cout << "Czy czujesz sie gruby/a? (t/n): ";
+        cin >> odp;
+        cout <<("")<< endl;
+        if (odp=='t'||odp=='T')
+         cout << "Musisz sie odchudzac" << endl;
+        else
+         cout << "To bardzo dobrze" << endl;
+        }
+    }
+    cout << endl;
+    cout << "\tWcisnij [ESC] zeby wyjsc" << endl;
+    while( getch() != 27 );
+
+return 0;
+}
