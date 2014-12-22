@@ -1,0 +1,43 @@
+#include <iostream>
+#include <cstdlib>
+
+using namespace std;
+
+int main ()
+{
+    char odp_1, odp_2;
+    cout <<"Program prezentuje zagniezdzona instrukcje case \n\n";
+    cout <<"Powiedz mi, Piotrowi, czy uczciwym w zyciu byles? (t/n):";
+    cin >> odp_1;
+
+    switch (odp_1)
+    {
+    case 't' : case 'T' :
+        cout<< "\n To dobrze, dobrze ... Witaj w niebie.\n";
+        break;
+    case 'n' : case 'N' :
+        cout<< "Oj niedobrze, niedobrze....\n";
+    cout<< "A bardzo nieuczciwym czy tylko ciut-ciut byles (b/c): ";
+    cin>> odp_2;
+
+    switch (odp_2)
+    {
+        case 'b' : case 'B' :
+            cout<<"\n Oj, to bardzo niedobrze ... pojdziesz Ty do piekla.\n";
+            break;
+        case 'c' : case 'C' :
+            cout<<"\n Moze uda sie cos zrobic ....\n";
+            break;
+        default :
+            cout<<"???\n";
+            cout<<"Nie bardzo rozumiem, co miales na mysli piszac : "<< odp_2 << endl;
+            cout<<"???\n";
+    }
+        break;
+    default :
+        cout<< "???\n";
+        cout<<"Nie bardzo rozumiem, co miales na mysli piszac : "<< odp_1 << endl;
+        cout<<"???\n";
+    }
+    return 0;
+}
