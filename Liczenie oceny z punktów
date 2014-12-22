@@ -1,0 +1,38 @@
+
+#include <iostream>
+#include <conio.h>
+#include <cstdlib>
+
+using namespace std;
+
+
+int main()
+{
+int lp;//liczba punktów
+double ocena;//obliczona ocena
+cout<<"Program prezentujący instrukcje case\n\n";
+cout<<"podaj liczbe uzyskanych punktow z testu: ";
+cin >> lp;
+
+switch (lp)
+    {
+        case 10: case 9 : ocena = 5; break;
+        case 8: ocena = 4.5; break;
+        case 7: ocena = 4.0; break;
+        case 6: ocena = 3.5; break;
+        case 5: ocena = 3.0; break;
+        case 0: case 1 : case 2: case 3: case 4: ocena = 2.0; break;
+
+        default : // żeby zapewnić obsługę w przypadku podania nieprawidłowej liczby punktów.
+            ocena = 2.0;
+            cout<< "Oj nieladnie, podales niemozliwa do uzyskania liczbe punktow\n";
+    }
+
+    cout<<"Twoja prace wypada ocenc na "<< ocena << endl;
+
+
+    cout << "\tWcisnij [ESC] zeby wyjsc" << endl;
+    while( getch() != 27 );
+
+return 0;
+}
