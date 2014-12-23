@@ -1,0 +1,108 @@
+/*
+Programowanie
+zima 2014/15
+Zadanie 1
+Napisać program, który:
+1. wczytuje imię użytkownika (jako zmienną typu string) 2. wczytuje jeden znak informujący, czy użytkownik jest kobietą, czy mężczyzną (duża lub mała litera K lub M) 3. drukuje powitanie z użyciem imienia w postaci:
+imie, witam Pania/Pana (imion nie trzeba odmieniać), np. Andrzej, witam Pana
+4. wczytuje dwie dowolne liczby całkowite (mogą być ujemne) 5. drukuje informacje o każdej wczytanej liczbie – czy jest jednocyfrowa, czy dwucyfrowa, czy inna
+6. drukuje wynik dzielenia pierwszej liczby przez podwojoną wartość drugiej liczby – należy nie dopuścić do dzielenia przez zero (wydrukować odpowiedni komunikat).
+UWAGA 2: Nie używamy w programach żadnych polskich znaków diakrytycznych (ogonkowych).
+*/
+#include <iostream>
+#include <string>
+#include <cstdlib>
+#include <conio.h>
+#include <cmath>
+
+using namespace std;
+
+//zmienne
+string imie; //imie
+char plec; //plec
+int x,y; // zmienne x i y
+double w; // zmienna wynik
+bool status_ok;
+int main()
+
+{
+    cout <<("Podaj imie:")<< endl;
+    status_ok = true;
+    cin >>imie; //pobieramy informacje o imieniu
+    cout <<("Jestes Kobieta czy Mezczyzna, wpisz K lub M:")<< endl;
+    cin >> plec; //pobieramy informacje o plci, wpisuje 'k''K' lub 'm'M'
+
+if (plec == 'm'||plec == 'M') //sprawdza plec
+    {
+      cout <<("\t")<<imie<<(",Witam Pana")<< endl; // powitanie dla mezczyzny
+    }
+else if (plec == 'k'|| plec == 'K') //sprawdza plec
+    {
+      cout <<("\t")<<imie<<(",Witam Pania")<< endl; // powitanie dla kobiety
+    }
+else if (plec !='M'&&plec !='m'&&plec !='K'&&plec !='k')
+    {
+       cout <<("Blendna plec, sproboj jeszcze raz")<< endl;//koniec programu w razie błędu
+       cout <<("Nacisnij ESC zeby wyjsc");
+        while (getch() !=27);
+        return 0;
+    }
+
+cout <<(" ")<<endl;
+cout <<("Podaj dwie dowolne liczby calkowite (moga byc ujemne)")<< endl;
+cout <<("Podaj pierwsza liczbe:")<< endl;
+cin >> x;
+cout <<("Podaj druga liczbe")<< endl;
+cin >> y;
+
+if (y == 0)// zabezpieczenie przed wprowadzeniem 0
+    {
+      status_ok = false;
+      cout<<("Wprowadziles 0, dzielenie doprowadzi do blendu")<<endl;
+      cout <<("Nacisnij ESC zeby wyjsc");
+        while (getch() !=27);
+        return 0;
+    }
+if ( abs(x) <= 9)//sprawdza ile cyfr ma wprowadzony argument
+    {
+      cout<<("")<<endl;
+      cout<<("Pierwsza liczba jest jednocyfrowa")<<endl;
+    }
+else if (abs(x) < 100)
+    {
+      cout<<("")<<endl;
+      cout<<("Pierwsza liczba jest dwucyfrowa")<<endl;
+    }
+else if (x >=100)
+    {
+      cout<<("")<<endl;
+      cout<<("Pierwsza liczba jest inna niz jedno i dwu cyfrowe")<<endl;
+    }
+if (abs(y) <= 9)
+    {
+      cout<<("")<<endl;
+      cout<<("Druga liczba jest jednocyfrowa")<<endl;
+    }
+else if (abs(y) < 100)
+    {
+      cout<<("")<<endl;
+      cout<<("Druga liczba jest dwucyfrowa")<<endl;
+    }
+else if (abs(y) >=100)
+    {
+      cout<<("")<<endl;
+      cout<<("Druga liczba jest inna niż jedno i dwu cyfrowe")<<endl;
+    }
+
+if (status_ok) // jeżeli wszystko dobrze to liczy i wyświetla wynik
+    {
+    w=(x/(double)(y*2));
+    cout<<("")<<endl;
+    cout << x << "/2*"<< y << " = " << x << "/"<< 2*y << " = " << w <<"\n";
+    cout << ("\t Wynik dzielenia:") << w <<endl;
+    }
+
+cout <<("Nacisnij ESC zeby wyjsc");
+while (getch() !=27);
+return 0;
+}
