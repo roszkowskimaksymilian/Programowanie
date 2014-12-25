@@ -1,0 +1,43 @@
+#include <iostream>
+
+using namespace std;
+
+
+int main()
+{
+char x;
+
+char zn_min, zn_max;
+int licz_min, licz_max;
+
+licz_min = 0;
+licz_max = 0;
+zn_min = '.';
+zn_max = '.';
+do
+    {
+    cin>> x;
+    if (x < zn_min)
+    {
+    zn_min = x;
+    licz_min = 1;
+    }
+    else if (x == zn_min)
+    {
+    licz_min ++;
+    }
+    else if (x > zn_max)
+    {
+    zn_max = x;
+    licz_max = 1;
+    }
+    else if (x == zn_max)
+    licz_max ++;
+    }
+
+while (x != '.');
+cout << "Najmniejszy znak to " << zn_min << ", wystapil " << licz_min << " razy\n";
+cout << "Najwiekszy znak to " << zn_max << ", wystapil " << licz_max << " razy\n";
+return 0;
+}
+
