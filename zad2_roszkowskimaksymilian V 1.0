@@ -1,0 +1,78 @@
+/*
+Napisaæ program, który:
+1. wczytuje nazwisko studenta, wymuszaj¹c, by zaczyna³o siê ono wielk¹ liter¹.
+2. sprawdza na podstawie pierwszej litery nazwiska, w której grupie jest student i
+drukuje dane jego wyk³adowcy zgodne z informacjami w og³oszeniu na witrynie przedmiotu o
+podziale na grupy. Aby wydrukowaæ odpowiedŸ, nale¿y zapytaæ studenta o niezbêdne dane
+uzupe³niaj¹ce (czy zapisa³ siê po terminie podanym w og³oszeniu i jeœli tak, to jaki
+numer wyk³adowcy ma wpisany - nale¿y wymusiæ, by poda³ numer z zakresu 1-4).
+*/
+#include <iostream>
+#include <string>
+#include <cstdlib>
+#include <conio.h>
+#include <cmath>
+
+using namespace std;
+
+int main()
+
+{
+//zmienne
+string nazwisko;
+char odp;
+int nr;
+
+cout<<"Zadanie 2\n";
+cout<<"\n";
+do
+    {
+    cout<<"Wpisz swoje nazwisko z duzej litery: \n";
+    cin>>nazwisko;
+    }
+while (nazwisko[0]<'A' || nazwisko[0]>'Z');
+    cout<<" \n";
+    cout<< nazwisko << " Czy zapisales/as sie po 19 grudnia na zajecia z programowania? (t/n):\n";
+    cin >> odp;
+
+    switch (odp)
+    {
+        case 'N': case 'n':// w przypadku kiedy zapisał się wczesniej na podstawie pierwszej litery mozna ustalic nazwisko wykladowcy
+
+            if (nazwisko[0]>='A' && nazwisko[0]<='I')
+                  cout << "Twoim wykladowca jest mgr inz. Anna Sztyber\n";
+            else if (nazwisko[0]>='J' && nazwisko[0]<='M')
+                cout << "Twoim wykladowca jest mgr inz. Kornel Rostek\n";
+            else if (nazwisko[0]>='N' && nazwisko[0]<='S')
+                cout << "Twoim wykladowca jest mgr inz. Marcin Pieniak\n";
+            else if (nazwisko[0]>='T' && nazwisko[0]<='Z')
+                cout << "Twoim wykladowca jest prof. Barbara Putz\n";
+        break;
+
+        case 'T': case 't': // w prosty sposób sprawdza nazwisko wykladowcy po podaniu nr
+
+            cout << "Podaj numer wykladowcy podany w wykazie ocen (wprowadz 1,2,3 lub 4)\n";
+            cin >> nr;
+
+                switch (nr)
+                {
+                case 1:
+                cout <<"Twoim wykladowca jest Sztyber Anna\n";
+                break;
+                case 2:
+                cout <<"Twoim wykladowca jest Rostek Kornel\n";
+                break;
+                case 3:
+                cout <<"Twoim wykladowca jest Pieniak Marcin\n";
+                break;
+                case 4:
+                cout <<"Twoim wykladowca jest Putz Barbara\n";
+                break;
+
+                default: cout<<"Musisz wybrac cyfre z zakresu 1-4\n";
+                }
+   }
+cout <<("Nacisnij ESC zeby wyjsc");
+while (getch() !=27);
+return 0;
+}
