@@ -1,0 +1,16 @@
+#include <iostream>
+#include <conio.h>
+#include <windows.h>
+#include <stdio.h>
+
+using namespace std;
+
+int main ()
+{
+cout<<"Program for_3 , drukujacy znaki pomiedzy 'z' i 'A' w odwrotnej kolejnosci \n\n";
+
+for (char zn = 'z'; zn >= 'A'; zn--)
+    cout << zn;
+
+return 0;
+}
