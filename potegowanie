@@ -1,0 +1,33 @@
+#include <iostream>
+#include <conio.h>
+#include <windows.h>
+#include <stdio.h>
+
+using namespace std;
+
+int main ()
+{
+// x - podstawa potegi
+// w - wynik obliczen
+// b - wykladnik
+// zmienna sterujaca petla zdefiniujemy w petli
+
+double x, w;
+int b;
+cout<<" Program for_2, oblicza potegi o wykladnikach calkowitych\n\n";
+//prosimy o podanie danych
+cout<<"Podaj podstawe potegi : ";
+cin>> x;
+cout<<"\nPodaj wykladnik : ";
+cin>> b;
+
+//Przypisanie wartosci poczatkowych
+w = 1;
+//Petla wykonujaca obliczenia
+for (int i=0; i<b; i++)
+    w *= x;
+// wyswietlenie wynikow obliczen
+cout << endl << x << " do " << b << " potegi wynosi " << w << endl;
+
+return 0;
+}
