@@ -1,0 +1,24 @@
+#include <iostream>
+#include <conio.h>
+#include <windows.h>
+
+using namespace std;
+
+int main ()
+{
+    int potega = 1;
+    // rozpoczynamy petle
+
+    for(int i = 0; i<=10; i++)
+    {
+    // wypisujemy aktualna potege
+
+    cout<< "2 ^" << i << " = " << potega << endl;
+
+    // oblicamy nastepna potege - wykorzystamy skrocona forme operatora matematycznego
+    potega *= 2;
+    }
+
+    return 0;
+}
+
