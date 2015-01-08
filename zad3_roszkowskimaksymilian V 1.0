@@ -1,0 +1,50 @@
+#include <iostream>
+#include <string>
+#include <cstdlib>
+#include <conio.h>
+
+using namespace std;
+
+int main()
+
+{
+//zmienne
+string napis_1;// poprzedni napis
+string napis_0;// aktualny napis
+int dlugosc, dlugosc_min=0; // dlugoœæ najkrotszego wyrazu
+int licz_powtorzenia=0; // liczy powtorzenia
+
+cout<<"Zadanie 3\n";
+cout<<"\n";
+cout<<"Wpisz ciag napisow, program zakonczy sie po wpisaniu wyrazu 'end'\n";
+
+cin >> napis_1;
+if (napis_1!="end")
+    {
+do
+
+    {
+        napis_0 = napis_1;
+    dlugosc=napis_1.length();
+
+    if ((dlugosc<dlugosc_min)&&(napis_1!="end"))
+        {
+        dlugosc_min=dlugosc;
+        }
+        cin>> napis_1;
+
+    if ((napis_0[napis_0.size()-1]==napis_1[napis_1.size()-1])&&(napis_1!="end"))
+       {
+        licz_powtorzenia++;
+       }
+    }
+while (napis_1!= "end");
+    }
+cout<<"Wprowadzony napis konczacy sie ta sama litera wystapil " << licz_powtorzenia << " razy\n";
+cout<<"Dlugosc najkrotszego napisu: "<< dlugosc_min << endl;
+cout<<endl;
+cout <<("Nacisnij ESC zeby wyjsc");
+while (getch() !=27);
+
+return 0;
+}
