@@ -1,0 +1,54 @@
+#include <iostream>
+#include <cstdlib>
+#include <conio.h>
+
+using namespace std;
+
+int main()
+
+{
+//zmienne
+const int n=5;
+int liczba; //aktualna liczba
+int liczba_min; //najmniejsza liczba
+
+int TABLICA[n]; //tablica
+
+cout<<"Zadanie 4\n";
+cout<<endl;
+if (n<=0)
+{
+   cout<< "Zmienna n jest bledna !\n";
+   cout<< "Zmienna n musi byc wieksza od 0";
+   return 1;
+}
+// podpunkt a
+cout<<"Zaczynamy podpunkt a zadania 4\n";
+cout<<endl;
+cout<<"Podaj " << n <<" liczb calkowitych potwierdzajac enterem \n";
+cin>>liczba_min; //wczytuje liczbe - jest jedyna, wiec wiadomo ze najmniejsza
+    for (int i=0;i<(n-1); i++)
+    {
+    cin>>liczba; // wczytuje kolejna liczbe
+    if(liczba<liczba_min)// sprawdza czy jest mniejsza od tej wczesniej wczytanej
+        liczba_min=liczba; // i jezeli jest mniejsza to przypisuje jej wartosc do liczba_min
+    }
+cout<<"Najmniejsza liczba to: "<< liczba_min <<endl; //wypisuje najmniejsza liczbe
+cout<<endl;
+// podpunkt b
+cout<<"Zaczynamy podpunkt b zadania 4\n";
+cout<<"Podaj " << n << " liczb calkowitych potwierdzajac enterem\n";
+    for (int i=0; i<n; i++)
+    cin>> TABLICA[i];//pobranie kolejno n liczb
+    liczba_min = TABLICA[0];
+        for (int i=1; i<n; i++)
+        if (TABLICA[i] < liczba_min)//sprawdza ktora liczba jest najmniejsza
+        liczba_min = TABLICA[i];
+for (int i=0; i<n; i++)//drukuje wyniki odejmowania
+    cout<<"Roznica pomiedzy pobrana liczba "<< TABLICA[i] << " a najmniejsza liczba " << liczba_min << " wynosi: "<< TABLICA[i] - liczba_min <<endl;
+cout<<endl;
+cout <<("Nacisnij ESC zeby wyjsc");
+while (getch() !=27);
+
+return 0;
+}
